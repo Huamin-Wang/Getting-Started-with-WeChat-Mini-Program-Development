@@ -1,0 +1,13 @@
+<form bindsubmit="onSubmit">
+  <view class="container">
+    <view class="form-item">
+      <label class="form-label">姓名：</label>
+      <input name="name" placeholder="请输入姓名" class="form-input" />
+    </view>
+    <view class="form-item">
+      <label class="form-label">年龄：</label>
+      <input name="age" type="number" placeholder="请输入年龄" class="form-input" />
+    </view>
+    <button formType="submit" type="primary" class="submit-btn">提交</button>
+  </view>
+</form>
