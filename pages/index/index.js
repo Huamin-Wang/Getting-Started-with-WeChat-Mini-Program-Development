@@ -46,5 +46,22 @@ data: {
     })
     //设置本页面data的数据
     this.addData()
-  }
+  },
+ navigateToWebpage(){
+   // 跳转到小程序内的其他页面
+   wx.navigateTo({
+     url: '/pages/info/info',
+     success: function(res) {
+       console.log('页面跳转成功')
+     },
+     fail: function(err) {
+       console.error('页面跳转失败', err)
+       wx.showToast({
+         title: '跳转失败',
+         icon: 'none',
+         duration: 2000
+       })
+     }
+   })
+ }
 })

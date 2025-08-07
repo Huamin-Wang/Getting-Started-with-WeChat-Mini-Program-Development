@@ -1,13 +1,15 @@
-<form bindsubmit="onSubmit">
-  <view class="container">
+<view class="container">
+  <view class="form-title">添加用户信息</view>
+  <form bindsubmit="onSubmit">
     <view class="form-item">
-      <label class="form-label">姓名：</label>
-      <input name="name" placeholder="请输入姓名" class="form-input" />
+      <text class="label">姓名：</text>
+      <input name="name" class="input" placeholder="请输入姓名" />
     </view>
     <view class="form-item">
-      <label class="form-label">年龄：</label>
-      <input name="age" type="number" placeholder="请输入年龄" class="form-input" />
+      <text class="label">年龄：</text>
+      <input name="age" class="input" type="number" placeholder="请输入年龄" />
     </view>
-    <button formType="submit" type="primary" class="submit-btn">提交</button>
-  </view>
-</form>
+    <button class="submit-btn" formType="submit">提交</button>
+  </form>
+  <button class="nav-btn" bindtap="navigateToWebpage">查看所有名单</button>
+</view>

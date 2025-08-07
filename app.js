@@ -1,4 +1,7 @@
 App({
+  globalData:{
+    userList:[]
+  },
   onLaunch() {
     // 初始化云开发环境
     if (!wx.cloud) {
