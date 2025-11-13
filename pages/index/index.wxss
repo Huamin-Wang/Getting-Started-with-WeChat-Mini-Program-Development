@@ -1,43 +1,10 @@
-.container {
-padding: 500rpx 40rpx 40rpx;
-  background: #f7f7f7;
-  min-height: 100vh;
+/**index.wxss**/
+page {
+  height: 100vh;
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
 }
-.form-title {
-  font-size: 36rpx;
-  font-weight: bold;
-  color: #333;
-  margin-bottom: 40rpx;
-  text-align: center;
-}
-.form-item {
-  margin-bottom: 32rpx;
-  display: flex;
-  align-items: center;
-}
-.label {
-  width: 120rpx;
-  font-size: 28rpx;
-  color: #666;
-}
-.input {
+.scrollarea {
   flex: 1;
-  padding: 16rpx;
-  border: 1px solid #ddd;
-  border-radius: 8rpx;
-  background: #fff;
-  font-size: 28rpx;
-}
-.submit-btn {
-  width: 100%;
-  background: #1890ff;
-  color: #fff;
-  font-size: 32rpx;
-  border-radius: 8rpx;
-  padding: 20rpx 0;
-  margin-top: 24rpx;
-  border: none;
+  overflow-y: hidden;
 }
