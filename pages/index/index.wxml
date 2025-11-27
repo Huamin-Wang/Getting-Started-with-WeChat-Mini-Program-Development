@@ -2,18 +2,16 @@
 <navigation-bar title="Weixin" back="{{false}}" color="black" background="#FFF"></navigation-bar>
 <scroll-view class="scrollarea" scroll-y type="list">
   <view class="container">
-  <text>单个输入：input输入框</text>
-<input placeholder="请输入关键字"
-  bindinput="onInput"
-  value="{{keyword}}" />  
-
-  <text>多个输入：form窗口</text>
-  <form bindsubmit="formSubmit">
-  <input name="username" placeholder="请输入用户名" />
-  <input name="password" type="password" placeholder="请输入密码" />
-  <button formType="submit">提交</button>
-</form>
-
-
+    <form class="form" bindsubmit="onSubmit">
+      <view class="form-item">
+        <label>姓名:</label>
+        <input name="name" placeholder="请输入姓名"></input>
+      </view>
+      <view class="form-item">
+        <label>年龄:</label>
+        <input name="age" type="number" placeholder="请输入年龄"></input>
+      </view>
+      <button class="submit-btn" form-type="submit">提交</button>
+    </form>
   </view>
 </scroll-view>
