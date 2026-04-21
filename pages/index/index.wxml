@@ -1,17 +1,16 @@
-<!--index.wxml-->
-<navigation-bar title="Weixin" back="{{false}}" color="black" background="#FFF"></navigation-bar>
-<scroll-view class="scrollarea" scroll-y type="list">
-  <view class="container">
-    <form class="form" bindsubmit="onSubmit">
-      <view class="form-item">
-        <label>姓名:</label>
-        <input name="name" placeholder="请输入姓名"></input>
-      </view>
-      <view class="form-item">
-        <label>年龄:</label>
-        <input name="age" type="number" placeholder="请输入年龄"></input>
-      </view>
-      <button class="submit-btn" form-type="submit">提交</button>
-    </form>
+<navigation-bar title="省份查询" background="transparent" color="#fff"></navigation-bar>
+
+<view class="container">
+  <view class="search-card">
+    <view class="title">省会查询</view>
+    <view class="search-box">
+      <input 
+        class="search-input" 
+        placeholder="请输入查询的省份" 
+        placeholder-class="placeholder-style"
+        bindinput="onInput"
+        value="{{keyword}}" />
+     <button class="search-btn" bindtap="search">查询</button>
+    </view>
   </view>
-</scroll-view>
+</view>

@@ -1,5 +1,5 @@
 .weui-navigation-bar {
-  --weui-FG-0:rgba(0,0,0,.9);
+  --weui-FG-0:rgba(255,255,255,.95);
   --height: 44px;
   --left: 16px;
 }
@@ -11,6 +11,7 @@
   overflow: hidden;
   color: var(--weui-FG-0);
   flex: none;
+  background: transparent;
 }
 
 .weui-navigation-bar__inner {
@@ -58,16 +59,17 @@
 }
 
 .weui-navigation-bar__center {
-  font-size: 17px;
+  font-size: 34rpx;
   text-align: center;
   position: relative;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  font-weight: bold;
+  font-weight: 600;
   flex: 1;
   height: 100%;
+  letter-spacing: 2rpx;
 }
 
 .weui-navigation-bar__loading {
