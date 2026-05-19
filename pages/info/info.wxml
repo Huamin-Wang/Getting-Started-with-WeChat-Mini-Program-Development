@@ -1,0 +1,11 @@
+<!-- 用户列表展示 -->
+<view class="user-list">
+  <view class="list-title">用户列表</view>
+  <block wx:for="{{localUserList}}" wx:key="index">
+    <view class="user-item">
+      <text class="user-name">姓名: {{item.name}}</text>
+      <text class="user-age">年龄: {{item.age}}</text>
+    </view>
+  </block>
+  <view class="no-data" wx:if="{{localUserList.length === 0}}">暂无用户数据</view>
+</view>

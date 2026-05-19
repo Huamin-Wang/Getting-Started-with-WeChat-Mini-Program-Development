@@ -1,16 +1,15 @@
-<navigation-bar title="省份查询" background="transparent" color="#fff"></navigation-bar>
-
 <view class="container">
-  <view class="search-card">
-    <view class="title">省会查询</view>
-    <view class="search-box">
-      <input 
-        class="search-input" 
-        placeholder="请输入查询的省份" 
-        placeholder-class="placeholder-style"
-        bindinput="onInput"
-        value="{{keyword}}" />
-     <button class="search-btn" bindtap="search">查询</button>
+  <view class="form-title">添加用户信息</view>
+  <form bindsubmit="onSubmit">
+    <view class="form-item">
+      <text class="label">姓名：</text>
+      <input name="name" class="input" placeholder="请输入姓名" />
     </view>
-  </view>
+    <view class="form-item">
+      <text class="label">年龄：</text>
+      <input name="age" class="input" type="number" placeholder="请输入年龄" />
+    </view>
+    <button class="submit-btn" formType="submit">提交</button>
+  </form>
+  <button class="nav-btn" bindtap="navigateToWebpage">查看所有名单</button>
 </view>

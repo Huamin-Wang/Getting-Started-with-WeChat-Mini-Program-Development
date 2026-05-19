@@ -1,36 +1,67 @@
+
+const db = wx.cloud.database() // 获取数据库实例
+const collection = db.collection('situation') // 连接名为"situation"的集合
 Page({
-  data: {
-    keyword: "",
-    city: ""
-  },
-
-  // 每次输入框数据有变化则执行
-  onInput(e) {
-    this.setData({
-      keyword: e.detail.value
-    });
-    console.log("输入的内容为：", this.data.keyword);
-  },
-
-  // 查询功能
-  search() {
-    console.log("开始查询：", this.data.keyword);
+data: {
+  name: "",
+  age: 0
+},
+  onLoad() {
+    console.log("----数据库操作中---")
+    // 调用添加数据的方法
     
-    // 如果是福建，则返回福州，如果是广东，则返回广州
-    if (this.data.keyword === "福建") {
-      this.setData({
-        city: "福州"
-      });
-    } else if (this.data.keyword === "广东") {
-      this.setData({
-        city: "广州"
-      });
+  },
+  // 将addData定义为页面方法，便于调用
+  async addData() {
+    try {
+      const res = await collection.add({
+        data: { 
+          name: this.data.name, 
+          age: this.data.age,
+          createTime: db.serverDate() // 建议添加时间戳，方便后续查询排序
+        }
+      })
+      console.log('添加成功', res)
+      wx.showToast({
+        title: '添加成功',
+        icon: 'success',
+        duration: 2000
+      })
+    } catch (err) {
+      console.error('添加失败', err)
+      wx.showToast({
+        title: '添加失败',
+        icon: 'none',
+        duration: 2000
+      })
     }
-    
-    // 跳转到搜索结果页面，传递 keyword 和 city
-    wx.navigateTo({
-      url: `/pages/searchResult/searchResult?keyword=${this.data.keyword}&city=${this.data.city}`
-    });
-  }
+  },
+  onSubmit(e) {
+    const { name, age } = e.detail.value;
+    // 这里可以处理 name 和 age
+    console.log('姓名:', name, '年龄:', age);
+    this.setData({
+      name:name,
+      age:age
+    })
+    //设置本页面data的数据
+    this.addData()
+  },
+ navigateToWebpage(){
+   // 跳转到小程序内的其他页面
+   wx.navigateTo({
+     url: '/pages/info/info',
+     success: function(res) {
+       console.log('页面跳转成功')
+     },
+     fail: function(err) {
+       console.error('页面跳转失败', err)
+       wx.showToast({
+         title: '跳转失败',
+         icon: 'none',
+         duration: 2000
+       })
+     }
+   })
+ }
 })
-
